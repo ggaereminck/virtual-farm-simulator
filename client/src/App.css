@@ -1,5 +1,84 @@
-.App {
+.nav{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(18, 140, 51);
+  justify-content: space-between;
+  
+}
+
+.nav a{
+  text-decoration: none;
+}
+
+.home-screen{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.leaderboard {
   text-align: center;
+  border-style: solid;
+  border-color: grey;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.farm-name {
+  text-align: center;
+}
+
+.farm-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 800px;
+}
+
+.store-box {
+  border-style: solid;
+  border-color: grey; 
+  background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* .logout-btn button{
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  font-size: 3em;
+  margin-right: 6px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.log-btn{
+  font-size: 17px;
+  margin-right: 12px;
+  margin-bottom: 10px;
+}
+
+.log-btn button{
+  white-space: nowrap;
+  font-size: 1em;
+  padding: 0 0.25rem;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 7px;
+  width: auto;
+  border: 1px solid #ccc;
+  cursor: pointer;
+} */
+
+.App {
+  background-size: 1366px 784px;
+  /* background-position: center ; */
+  background-image: url('https://justinike.com/assets/images/2020-03-01-Pixel-Art-Color-and-Graphical-Projection/Farm.gif');
 }
 
 .App-logo {
