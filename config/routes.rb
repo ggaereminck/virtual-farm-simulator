@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :events
   resources :store_crops
   resources :store_animals
   resources :stores

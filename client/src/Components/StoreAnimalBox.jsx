@@ -39,7 +39,7 @@ export default function StoreAnimalBox({storeAnimal, farmId, farm, setFarmData})
             <button className="store-button" onClick={() => {
                 const newCurrency = farm.currency - storeAnimal.cost
                 if (newCurrency > 0){
-                newFarmAnimal(addFarmAnimal, farmId, newCurrency)}}}>Purchase</button>
+                newFarmAnimal(addFarmAnimal, farmId, newCurrency)} else { alert('You are short on currency! Purchase cannot be comleted.')}}}>Purchase</button>
         </div>
     )
 }

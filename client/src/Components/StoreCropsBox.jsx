@@ -40,7 +40,7 @@ export default function StoreCropsBox({storeCrop, farmId, farm, setFarmData}){
                 const newCurrency= farm.currency - storeCrop.cost
                 if (newCurrency > 0) {
                 newFarmCrop(addFarmCrop, farmId, newCurrency)
-                }}}>Purchase</button>
+                } else { alert('You are short on currency! Purchase cannot be comleted.')}}}>Purchase</button>
         </div>
     )
 }

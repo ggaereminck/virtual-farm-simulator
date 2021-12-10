@@ -7,6 +7,8 @@ import {React, useState, useEffect} from "react";
 
 export default function Farm({farm, setFarmData, farmData, user}){
     const [leaderBoard, setLeaderBoard] = useState([])
+    const [eventData, setEventData] = useState([])
+    const [randomEvent, setRandomEvent] = useState()
 
     useEffect(() => {
         fetch('/users')
@@ -14,10 +16,33 @@ export default function Farm({farm, setFarmData, farmData, user}){
         .then(data => setLeaderBoard(data))
     }, [])
 
+    useEffect(() => {
+        fetch('/events')
+        .then(res => res.json())
+        .then(data => setEventData(data))
+      }, [])
+
+    function handleEvent(farm_id, newCurrency){
+        fetch(`/farms/${farm_id}`,{
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({currency: newCurrency})
+        })
+        .then(res => res.json())
+        .then(data => setFarmData([data]))
+    }
+
+
     return (
         <div className="farm-name">
             <h2>{farm.name}</h2>
             <h4>{`Currency: ${farm.currency}`}</h4>
+            <button onClick={() => {
+                const randomEventNumber = Math.floor(Math.random() * (8))
+                const newCurrency = farm.currency + (eventData[randomEventNumber].reward)
+                handleEvent(farm.id, newCurrency)
+                alert(`${eventData[randomEventNumber].name} Your currency has been changed by ${eventData[randomEventNumber].reward}`)
+                }}>Random Event</button>
             <div className="home-screen">
                     <div className="leaderboard">
                         <h2>Leaderboard:</h2>

@@ -29,7 +29,9 @@ function App() {
   }, [])
 
 
-  if(!user) return <Login onLogin={setUser} setFarmData={setFarmData}/>
+
+
+  if(!user) return <Login onLogin={setUser} setFarmData={setFarmData} farmData={farmData}/>
 
 
   return (
