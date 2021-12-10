@@ -36,9 +36,10 @@ export default function StoreAnimalBox({storeAnimal, farmId, farm, setFarmData})
             <ul>{`Cost: ${storeAnimal.cost}`}</ul>
             <ul>{`Sale Value:${storeAnimal.sale_value}`}</ul>
             <image src={storeAnimal.img} alt={storeAnimal.name}></image>
-            <button onClick={() => {
+            <button className="store-button" onClick={() => {
                 const newCurrency = farm.currency - storeAnimal.cost
-                newFarmAnimal(addFarmAnimal, farmId, newCurrency)}}>Purchase</button>
+                if (newCurrency > 0){
+                newFarmAnimal(addFarmAnimal, farmId, newCurrency)}}}>Purchase</button>
         </div>
     )
 }

@@ -34,7 +34,7 @@ export default function AnimalContainer({farm_animals, farm, setFarmData, farmDa
             <h4>{farm_animals.name}</h4>
             <p>Harvest Value: {farm_animals.harvest_value}</p>
             <img src={farm_animals.img}/>
-            {y < currentTime ? <button onClick={() => {
+            {y < currentTime ? <button className="store-button" onClick={() => {
                 const newCurrency = farm.currency + farm_animals.harvest_value
                 harvest(farm_animals.id, farm.id, newCurrency)}}>Harvest!</button> : ""}
             <p>Harvest Time: {displayTime}</p>

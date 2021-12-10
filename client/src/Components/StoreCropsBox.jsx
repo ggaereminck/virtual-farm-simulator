@@ -31,14 +31,16 @@ export default function StoreCropsBox({storeCrop, farmId, farm, setFarmData}){
 
     return(
         <div>
-            <h4>{`Name: ${storeCrop.name}`}</h4>
+            <h4>{`Crop: ${storeCrop.name}`}</h4>
             <ul>{`Cost: ${storeCrop.cost}`}</ul>
             <ul>{`Harvest Value: ${storeCrop.sale_value}`}</ul>
             <ul>{`Grow Time: ${storeCrop.grow_time}`}</ul>
             <image src={`${storeCrop.img}`} alt={storeCrop.name}></image>
-            <button onClick={() => {
+            <button className="store-button" onClick={() => {
                 const newCurrency= farm.currency - storeCrop.cost
-                newFarmCrop(addFarmCrop, farmId, newCurrency)}}>Purchase</button>
+                if (newCurrency > 0) {
+                newFarmCrop(addFarmCrop, farmId, newCurrency)
+                }}}>Purchase</button>
         </div>
     )
 }

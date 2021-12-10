@@ -17,8 +17,8 @@ export default function Header({setUser}){
             <NavLink to='/'>
                 <div>Farm</div>
             </NavLink>
-            <div className='logout_btn'>
-                <button onClick={() => handleLogOut()}>Logout</button>
+            <div >
+                <button className='logout_btn' onClick={() => handleLogOut()}>Logout</button>
             </div>
         </nav>
     )

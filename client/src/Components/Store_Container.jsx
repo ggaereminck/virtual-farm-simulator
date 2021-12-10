@@ -13,7 +13,7 @@ export default function StoreContainer({farmId, farm, setFarmData}){
 
     return(
         <div>
-            Store Container
+            <h2>Store:</h2>
             {storeData.map(store => 
                 <StoreAnimals store={store} farmId={farmId} farm={farm} setFarmData={setFarmData}/>)}
             {storeData.map(store => 
